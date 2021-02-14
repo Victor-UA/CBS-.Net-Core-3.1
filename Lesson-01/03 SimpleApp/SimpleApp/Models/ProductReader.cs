@@ -9,9 +9,19 @@ namespace SimpleApp.Models
     public class ProductReader
     {
         private readonly string path = "App_Data/data.txt";
+        
+        enum Headers
+        {
+            Id,
+            Name,
+            Description,
+            Price,
+            Count
+        }
 
         public List<Product> ReadFromFile()
         {
+
             string[] lines = File.ReadAllLines(path);
 
             List<Product> result = new List<Product>();
@@ -21,9 +31,11 @@ namespace SimpleApp.Models
 
                 Product product = new Product
                 {
-                    Id = Convert.ToInt32(items[0].Trim()),
-                    Name = items[1].Trim(),
-                    Price = Convert.ToDouble(items[2].Trim())
+                    Id = Convert.ToInt32(items[(int) Headers.Id].Trim()),
+                    Name = items[(int) Headers.Name].Trim(),
+                    Description = items[(int) Headers.Description].Trim(),
+                    Price = Convert.ToDouble(items[(int) Headers.Price].Trim()),
+                    Count = Convert.ToInt32(items[(int)Headers.Count].Trim())
                 };
 
                 result.Add(product);
