@@ -19,12 +19,20 @@
             <td>@Model.Id</td>
         </tr>
         <tr>
-            <td>Название</td>
+            <td>Name</td>
             <td>@Model.Name</td>
         </tr>
         <tr>
-            <td>Цена</td>
+            <td>Description</td>
+            <td>@Model.Description</td>
+        </tr>
+        <tr>
+            <td>Price</td>
             <td>@Model.Price</td>
+        </tr>
+        <tr>
+            <td>Count</td>
+            <td>@(Model.Count == 0 ? "Out of stock" : Model.Count > 5 ? "In stock" : "Last items in stock")</td>
         </tr>
     </table>
 </body>
