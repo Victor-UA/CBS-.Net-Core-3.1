@@ -1,0 +1,39 @@
+﻿@model SimpleApp.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Детали</h2>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>@Model.Description</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>@Model.Price</td>
+        </tr>
+        <tr>
+            <td>Count</td>
+            <td>@(Model.Count == 0 ? "Out of stock" : Model.Count > 5 ? "In stock" : "Last items in stock")</td>
+        </tr>
+    </table>
+</body>
+</html>
