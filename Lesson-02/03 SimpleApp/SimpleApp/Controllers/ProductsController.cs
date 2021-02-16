@@ -19,9 +19,19 @@ namespace SimpleApp.Controllers
         }
 
         // Products/List
-        public IActionResult List()
+        public IActionResult List(string? id)
         {
-            List<Product> products = _reader.ReadFromFile();
+            List<Product> products;
+            if (id != null)
+            {
+                var categories = id.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
+                var categoriesTrimmed = categories.Select(c => c.Trim()).ToArray();
+                products = _reader.ReadFromFileCategories(categoriesTrimmed);
+            }
+            else
+            {
+                products = _reader.ReadFromFile();
+            }
             // Возврат представления List и передача представлению модели в виде коллекции products
             // Получить доступ к коллекции в представлении можно будет через свойство представления Model
             return View(products);

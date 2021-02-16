@@ -29,12 +29,13 @@ namespace SimpleApp
 
             app.UseRouting();
 
-            app.UseEndpoints(endpoints => 
+            app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                        name: "Default",
-                        pattern: "{controller}/{action}/{id?}"
-                    );
+                endpoints.MapControllerRoute
+                (
+                    name: "Default",
+                    pattern: "{controller}/{action}/{id?}"
+                );
             });
 
             // {id?} - данный фрагмент шаблона описывает не обязательный сегмент в адресе запроса.
