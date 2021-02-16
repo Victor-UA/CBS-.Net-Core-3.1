@@ -1,0 +1,6 @@
+﻿1, Mobile Phones, Mobile Phone, Dual Sim, 600, 3
+2, PCs, Laptop, 17 inches, 3200, 1
+3, PCs, Keyboard, USB, 35, 120
+4, PCs, Mouse, USB, 10, 98
+5, Office, Pen, Sky-Blue, 1, 1200
+6, Office, Notebook, 367 pages, 1, 0
